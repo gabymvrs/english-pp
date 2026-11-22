@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Present Perfect · Inglês B1</title>
+<style>
+:root{--bg:#f6f6fa;--card:#fff;--tx:#1c1e2b;--mu:#6b7085;--ac:#5a5ad8;--ok:#2a9d68;--bad:#d64545;--ln:#e2e4ee;--soft:#ecebff}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14151c;--card:#1e1f2a;--tx:#eceef6;--mu:#9ba1b5;--ac:#8d8dff;--ok:#41c484;--bad:#ff6b6b;--ln:#2d2f3d;--soft:#282a4a}}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--tx);padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--ln);z-index:5}
+.wrap{max-width:720px;margin:auto;padding:16px}
+h1{font-size:1.2rem;margin:0;cursor:pointer}
+h2{margin:.4rem 0 .6rem;font-size:1.15rem}
+.steps{display:flex;gap:6px;flex-wrap:wrap;font-size:.75rem;margin-top:8px}
+.steps span{background:var(--soft);color:var(--ac);padding:2px 9px;border-radius:99px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:16px;padding:20px;margin-bottom:14px}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:12px;padding:10px 18px;font:inherit;cursor:pointer}
+.btn:disabled{opacity:.4;cursor:default}
+.ghost{background:transparent;color:var(--ac);border:1px solid var(--ln)}
+.link{background:none;border:0;color:var(--mu);cursor:pointer;padding:0;margin-bottom:8px;font:inherit}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:14px}
+.tab{border:1px solid var(--ln);background:var(--card);color:var(--tx);border-radius:99px;padding:6px 14px;font:inherit;cursor:pointer;white-space:nowrap}
+.tab.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.stg{text-align:left;cursor:pointer;font:inherit;color:var(--tx);width:100%}
+.stg:disabled{opacity:.5;cursor:default}
+.muted{color:var(--mu);font-size:.9rem}
+.bar{height:8px;background:var(--ln);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok);border-radius:99px}
+.tl{position:relative;height:70px;margin:18px 4px 4px}
+.tl:before{content:"";position:absolute;left:0;right:0;top:20px;height:3px;background:var(--ln)}
+.tl b{position:absolute;top:0;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:var(--ac);margin-top:13px}
+.tl .now{background:var(--ok)}
+.tl small{position:absolute;top:38px;transform:translateX(-50%);font-size:.75rem;color:var(--mu);white-space:nowrap}
+.ex{background:var(--soft);border-radius:12px;padding:10px 14px;margin:8px 0;font-family:ui-monospace,monospace;font-size:.92rem}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt,.chip{border:1px solid var(--ln);background:var(--card);color:var(--tx);padding:10px 14px;border-radius:12px;font:inherit;cursor:pointer}
+.opt.sel{border-color:var(--ac);background:var(--soft)}
+.opt:disabled,.chip:disabled{cursor:default}
+.built{min-height:50px;border-bottom:2px dashed var(--ln);display:flex;flex-wrap:wrap;gap:6px;padding:6px 0;margin-bottom:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.between{justify-content:space-between}
+input{flex:1;min-width:180px;font:inherit;padding:10px 12px;border-radius:12px;border:1px solid var(--ln);background:var(--card);color:var(--tx)}
+.fb{padding:12px 14px;border-radius:12px;margin:14px 0}
+.fb.ok{background:#e4f6ec;color:#17603f}
+.fb.bad{background:#fbe6e6;color:#8a2222}
+@media (prefers-color-scheme:dark){.fb.ok{background:#17382a;color:#9fe3c0}.fb.bad{background:#3d1f1f;color:#ffb3b3}}
+.flash{min-height:200px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:1.2rem;cursor:pointer;user-select:none}
+.big{font-size:2.4rem;font-weight:700;color:var(--ac)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1 data-act="home">📘 Present Perfect · B1</h1>
+<div class="steps"><span>1 Aprender</span><span>2 Visualizar</span><span>3 Praticar</span><span>4 Testar</span><span>5 Revisar</span></div></div></header>
+<main class="wrap" id="main"></main>
+
+<script>
+const S=[
+{id:1,name:'Forma e experiência',
+lesson:`<h2>Have / has + particípio</h2>
+<p>Use <b>have</b> (I, you, we, they) ou <b>has</b> (he, she, it) + <b>particípio</b> (3ª forma: see → seen, go → gone, write → written).</p>
+<div class="ex">I have seen the movie.<br>She has finished.</div>
+<h2>Linha do tempo</h2>
+<p class="muted">Ações sem data específica, conectadas ao momento atual:</p>
+<div class="tl"><b style="left:20%"></b><b style="left:45%"></b><b style="left:70%"></b><b class="now" style="left:95%"></b><small style="left:20%">passado</small><small style="left:95%">agora</small></div>
+<p>Usamos para <b>experiências de vida</b> (não dizemos quando) e para <b>ações recentes com efeito agora</b>.</p>
+<div class="ex">I have been to Japan. → já tive essa experiência<br>I have lost my keys. → não consigo achá-las agora</div>
+<p>Palavras comuns: <b>ever</b> (em perguntas), <b>never</b> (nunca), <b>already</b> (já, afirmativa), <b>yet</b> (ainda, negativa e perguntas), <b>just</b> (acabou de).</p>
+<h2>Comparação</h2>
+<div class="ex">I went to Japan in 2019. → data específica = passado simples<br>I have been to Japan. → sem data = Present Perfect</div>`,
+cards:[
+['Forma afirmativa?','have/has + particípio. Ex.: She has finished.'],
+['Quando usar ever e never?','Experiências de vida, sem data. Ex.: Have you ever flown?'],
+['Diferença entre already e yet?','already = afirmativa (já aconteceu). yet = negativa e perguntas (ainda não).'],
+['Passado simples x Present Perfect','Passado simples: data específica (in 2019). Present Perfect: sem data ou ligado ao presente.']
+],
+ex:[
+{t:'mc',q:'Escolha a forma correta: "I ___ never ___ sushi."',o:['have / eaten','have / ate','did / eat','was / eating'],a:0,e:'Experiência de vida usa have + particípio (eaten). "ate" é passado simples.'},
+{t:'fill',q:'Complete com o verbo finish: "She ___ her report already."',a:'has finished',e:'Com already na afirmativa: has + particípio (finished).'},
+{t:'err',q:'Qual palavra está errada?',w:['She','have','finished','her','homework'],a:1,fix:'She has finished her homework.',e:'Com she (3ª pessoa do singular), usamos has.'},
+{t:'ord',q:'Organize as palavras:',w:['been','never','I','Japan','to','have'],a:'I have never been to Japan',e:'Sujeito + have + never + been + to + lugar.'}
+,
+{t:'fill',q:'Complete com o verbo break: "Look! Someone ___ the window."',a:'has broken',e:'Resultado visível agora: a janela está quebrada.'},
+{t:'mc',q:'Escolha: "We ___ already ___ dinner."',o:['have / had','have / eaten','did / eat','was / eating'],a:1,e:'already na afirmativa com have + particípio: eaten.'}
+],
+tt:[
+{t:'mc',q:'Escolha: "___ you ever ___ a shark?"',o:['Did / seen','Have / seen','Have / saw','Were / seen'],a:1,e:'Perguntas de experiência: Have + sujeito + ever + particípio.'},
+{t:'fill',q:'Complete com o verbo lose: "I ___ my phone, so I can\'t call you."',a:'have lost',e:'O efeito é atual: o telefone continua perdido agora.'},
+{t:'err',q:'Qual palavra está errada?',w:['They','have','arrived','two','hours','ago'],a:1,fix:'They arrived two hours ago.',e:'"ago" indica um momento específico no passado, então usamos o passado simples.'},
+{t:'ord',q:'Organize as palavras:',w:['yet','finished','have','they','not','the','project'],a:'They have not finished the project yet',e:'Negativa com yet: have + not + particípio, e yet no fim da frase.'}
+]},
+{id:2,name:'Present Perfect Continuous',
+lesson:`<h2>Have been + verbo -ing</h2>
+<p>Use <b>have/has been</b> + <b>verbo com -ing</b>. O foco é no <b>processo</b> e na <b>duração</b>.</p>
+<div class="ex">She has been living here for five years.<br>I have been studying since 8 o'clock.</div>
+<h2>Linha do tempo contínua</h2>
+<div class="tl"><div style="position:absolute;top:18px;left:10%;width:75%;height:7px;background:var(--ac);opacity:.35;border-radius:9px"></div><b style="left:10%"></b><b class="now" style="left:85%"></b><small style="left:10%">início</small><small style="left:85%">agora</small></div>
+<p>Use <b>for</b> para duração (for three hours) e <b>since</b> para o ponto de início (since 2020).</p>
+<h2>Comparação</h2>
+<div class="ex">I have read three books. → resultado: 3 livros terminados<br>I have been reading all day. → o processo, a ação em si</div>
+<p>Use também quando há <b>evidência visível agora</b>: <i>You look tired. Have you been running?</i></p>`,
+cards:[
+['Forma do Present Perfect Continuous?','have/has been + verbo -ing. Ex.: They have been waiting.'],
+['for x since','for = duração (for 3 years). since = ponto de início (since 2020).'],
+['Quando usar a forma contínua com evidência?','Quando vemos o resultado agora. Ex.: Your hands are dirty. Have you been painting?'],
+['I have read 3 books: contínuo ou simples?','Simples (have read): foca na quantidade concluída, o resultado.']
+],
+ex:[
+{t:'mc',q:'Escolha: "How long ___ you ___ English?"',o:['have / been studying','have / studied','did / study','are / studying'],a:0,e:'"How long" pede duração até agora: have been + verbo -ing.'},
+{t:'fill',q:'Complete com o verbo rain: "It ___ since morning."',a:'has been raining',e:'A chuva começou de manhã e ainda continua.'},
+{t:'err',q:'Qual palavra está errada?',w:['She','has','been','live','here','since','2020'],a:3,fix:'She has been living here since 2020.',e:'A forma contínua exige -ing: living.'},
+{t:'ord',q:'Organize as palavras:',w:['for','working','have','we','three','hours','been'],a:'We have been working for three hours',e:'have been + verbo -ing, e for indica duração.'}
+,
+{t:'mc',q:'Escolha: "They ___ for the bus since 9 a.m."',o:['have been waiting','was waiting','did wait','wait'],a:0,e:'Duração até agora: have been + verbo -ing.'},
+{t:'fill',q:'Complete com o verbo study: "She is tired. She ___ all night."',a:'has been studying',e:'Ação contínua com evidência visível agora: ela está cansada.'}
+],
+tt:[
+{t:'mc',q:'"I ___ three books this month." (quantidade concluída)',o:['have read','have been reading','read','am reading'],a:0,e:'Quantidade concluída é resultado: use o Present Perfect simples.'},
+{t:'fill',q:'Suas mãos estão sujas. Have you ___ ? (paint)',a:'been painting',e:'Evidência visível agora: Present Perfect Continuous.'},
+{t:'err',q:'Qual palavra está errada?',w:['They','have','been','knowing','each','other','since','2010'],a:3,fix:'They have known each other since 2010.',e:'Verbos de estado (know, like, want) geralmente não aceitam a forma contínua.'},
+{t:'ord',q:'Organize as palavras:',w:['for','ten','years','has','he','been','studying'],a:'He has been studying for ten years',e:'Sujeito + has been + verbo -ing + for + duração.'}
+]},
+{id:3,name:'Passado Simples x Present Perfect',
+lesson:`<h2>Quando o tempo está definido?</h2>
+<p>O <b>passado simples</b> fala de um momento <b>concluído e com data</b>. O <b>Present Perfect</b> fala de um período <b>ainda não encerrado</b> ou de uma ação <b>sem data</b>.</p>
+<div class="tl"><b style="left:25%"></b><b style="left:75%"></b><b class="now" style="left:95%"></b><small style="left:25%">ontem / in 2022</small><small style="left:75%">this year</small><small style="left:95%">agora</small></div>
+<div class="ex">I visited London in 2018. → data concluída<br>I have visited London three times. → sem data<br>I have read two books this year. → o ano ainda não acabou</div>
+<h2>Sinais de tempo</h2>
+<p>Passado simples: <b>yesterday, last week, in 2010, when I was a child</b>.<br>Present Perfect: <b>today, this week, this year, so far, ever, never</b>.</p>
+<div class="ex">Did you arrive yesterday?<br>Have you arrived today?</div>`,
+cards:[
+['Sinal "yesterday" pede qual tempo?','Passado simples. Ex.: I saw him yesterday.'],
+['Sinal "this year" pede qual tempo?','Present Perfect, porque o período ainda não acabou. Ex.: I have read two books this year.'],
+['Por que "When did you arrive?" usa did?','A pergunta é sobre um momento concluído no passado: passado simples.'],
+['Qual o erro em "I have seen him last week"?','"last week" é um período concluído: use I saw him last week.']
+],
+ex:[
+{t:'mc',q:'Escolha: "We ___ that film ___ ." (last year)',o:['saw','have seen','have saw','see'],a:0,e:'last year é um período concluído: passado simples.'},
+{t:'fill',q:'Complete com o verbo be: "I ___ to Lisbon three times this year."',a:'have been',e:'this year ainda não acabou: Present Perfect.'},
+{t:'err',q:'Qual palavra está errada?',w:['When','have','you','arrived','?'],a:1,fix:'When did you arrive?',e:'Pergunta sobre um momento concluído no passado: use did.'},
+{t:'ord',q:'Organize as palavras:',w:['night','last','party','the','at','was','I'],a:'I was at the party last night',e:'last night é tempo concluído, então usamos o passado simples.'}
+,
+{t:'mc',q:'Escolha: "They ___ to London ___ ." (no mês passado)',o:['went last month','have gone last month','have went last month','go last month'],a:0,e:'last month é um período concluído: passado simples.'},
+{t:'fill',q:'Complete com o verbo be: "I ___ at home all day today."',a:'have been',e:'today ainda não acabou: Present Perfect.'}
+],
+tt:[
+{t:'mc',q:'Escolha: "She ___ her driving test ___ ." (em 2022)',o:['passed in 2022','has passed in 2022','have passed in 2022','passing in 2022'],a:0,e:'in 2022 é tempo concluído: passado simples. Present Perfect não aceita data específica.'},
+{t:'fill',q:'Complete com o verbo write: "I ___ two emails today."',a:'have written',e:'today é um período que ainda não acabou: Present Perfect.'},
+{t:'err',q:'Qual palavra está errada?',w:['We','have','met','him','last','summer'],a:1,fix:'We met him last summer.',e:'last summer é um período concluído: passado simples.'},
+{t:'ord',q:'Organize as palavras:',w:['arrive','did','when','you'],a:'When did you arrive',e:'Pergunta no passado simples: When + did + sujeito + verbo.'}
+]},
+{id:4,name:'Advérbios: ever, never, already, yet, just',
+lesson:`<h2>Onde ficam as palavras?</h2>
+<ul style="padding-left:0;list-style:none"><li><b>just</b> (acabou de): antes do particípio. <i>She has just left.</i></li><li><b>already</b> (já): afirmativa, antes do particípio. <i>I have already eaten.</i></li><li><b>yet</b> (ainda / já): negativas e perguntas, no fim. <i>I haven't eaten yet. Have you eaten yet?</i></li><li><b>ever</b> / <b>never</b>: experiências de vida. <i>Have you ever been to Bahia? I have never been there.</i></li></ul>
+<div class="ex">Have you ever been to Paris? → pergunta de experiência<br>I have never seen snow. → nunca (sem not)</div>
+<p>Expressões úteis: <b>so far</b> e <b>up to now</b> (até agora).</p>
+<div class="ex">So far, I have learned five lessons.</div>`,
+cards:[
+['already: onde fica na frase?','Antes do particípio, na afirmativa. Ex.: I have already eaten.'],
+['yet: onde fica na frase?',`No fim, em negativas e perguntas. Ex.: I haven't finished yet.`],
+['just significa o quê?','Acabou de (ação muito recente). Ex.: She has just left.'],
+['never em frase negativa?',`Não use not com never. Ex.: I have never seen snow. (não "I haven't never")`]
+],
+ex:[
+{t:'mc',q:'Escolha: "She has ___ arrived." (acabou de)',o:['just','yet','ever','never'],a:0,e:'just significa acabou de e fica antes do particípio.'},
+{t:'fill',q:'Complete com yet: "Have you finished ___ ?" (ainda)',a:'yet',e:'yet vai no fim de perguntas e negativas.'},
+{t:'err',q:'Qual palavra está errada?',w:['I','have','never','not','been','to','Japan'],a:3,fix:'I have never been to Japan.',e:'Não use not junto com never: a dupla negação está errada.'},
+{t:'ord',q:'Organize as palavras:',w:['so','far','have','we','learned','lessons','five'],a:'So far we have learned five lessons',e:'So far vai no início e ajuda a indicar um período até agora.'}
+,
+{t:'mc',q:'Escolha: "Have you ___ tried sushi?"',o:['ever','yet','just','since'],a:0,e:'ever aparece em perguntas sobre experiências de vida.'},
+{t:'fill',q:'Complete com just: "I have ___ finished my homework."',a:'just',e:'just = acabou de, antes do particípio.'}
+],
+tt:[
+{t:'mc',q:'Escolha: "She has ___ passed the exam." (acabou de)',o:['just','yet','ever','since'],a:0,e:'Em afirmativas, just fica antes do particípio. Yet não funciona na afirmativa.'},
+{t:'fill',q:'Complete: "We have ___ seen snow." (nunca)',a:'never',e:'never expressa a ideia de nunca em experiências de vida.'},
+{t:'err',q:'Qual palavra está errada?',w:['Have','you','ever','visit','Paris','?'],a:3,fix:'Have you ever visited Paris?',e:'Depois de have, usamos o particípio: visited.'},
+{t:'ord',q:'Organize as palavras:',w:['yet','not','has','arrived','he'],a:'He has not arrived yet',e:'Negativa: has + not + particípio, com yet no fim.'}
+]},
+{id:5,name:'Revisão geral: todos os tempos',
+lesson:`<h2>Qual tempo usar?</h2>
+<div class="ex">Present Perfect: have/has + particípio → experiências, resultados, períodos ainda não encerrados<br>Present Perfect Continuous: have been + -ing → duração, processo, evidência visível<br>Passado simples: verbo no passado → momento concluído, com data</div>
+<h2>Pergunte-se</h2>
+<p>1. Há data ou tempo encerrado? Passado simples.<br>2. O foco é o processo ou a duração? Present Perfect Continuous.<br>3. É experiência ou resultado, sem data? Present Perfect.</p>`,
+cards:[
+['Quando usar Present Perfect Continuous?','Processo ou duração: I have been reading all day.'],
+['Quando usar passado simples?','Momento concluído, com data: I finished it yesterday.'],
+['for ou since?','for = duração (for two years). since = ponto de início (since 2020).']
+],
+ex:[
+{t:'mc',q:'Escolha: "I ___ my keys, so I cannot open the door."',o:['have lost','lost','have been losing','was losing'],a:0,e:'O efeito continua agora: as chaves ainda estão perdidas.'},
+{t:'fill',q:'Complete com know: "We ___ each other for ten years."',a:'have known',e:'know é verbo de estado: não usamos a forma contínua.'},
+{t:'err',q:'Qual palavra está errada?',w:['He','has','been','work','here','since','January'],a:3,fix:'He has been working here since January.',e:'A forma contínua exige -ing: working.'},
+{t:'ord',q:'Organize as palavras:',w:['yesterday','the','bought','I','new','car'],a:'I bought the new car yesterday',e:'yesterday pede passado simples.'}
+],
+tt:[
+{t:'mc',q:'Escolha: "I ___ three cakes this week." (quantidade)',o:['have baked','have been baking','baked','am baking'],a:0,e:'Quantidade concluída: Present Perfect simples.'},
+{t:'fill',q:'Complete com see: "I ___ that movie last week."',a:'saw',e:'last week é um período concluído: passado simples.'},
+{t:'err',q:'Qual palavra está errada?',w:['How','long','have','you','living','here','?'],a:4,fix:'How long have you been living here?',e:'Com how long e duração até agora: have been + -ing.'},
+{t:'ord',q:'Organize as palavras:',w:['since','they','have','2015','been','married'],a:'They have been married since 2015',e:'Sujeito + have been + particípio + since + ponto de início.'}
+]}
+];
+
+S.forEach(s=>{s.ex.forEach((q,n)=>q.id=s.id+'x'+n);s.tt.forEach((q,n)=>q.id=s.id+'t'+n)});
+const ALL=S.flatMap(s=>[...s.ex,...s.tt]);
+
+const $=s=>document.querySelector(s),M=$('#main');
+const KEY='pp-b1-progresso';
+const P=(()=>{try{return Object.assign({done:{},wrong:{},hits:0,total:0},JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){return{done:{},wrong:{},hits:0,total:0}}})();
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(P))}catch(e){}};
+const norm=s=>String(s).toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();
+const shuf=a=>a.map((_,i)=>i).sort(()=>Math.random()-.5);
+const fixOf=q=>q.t==='mc'?q.o[q.a]:q.t==='err'?q.fix:q.a;
+const isOpen=i=>i===0||(P.done[S[i-1].id]||0)>=70;
+
+let view='home',cur=0,tab='aula',run=null,fc=0,fcFlip=false;
+
+function go(v){view=v;render()}
+function render(){run=null;({home,stage,progress,review})[view]();window.scrollTo(0,0)}
+
+function home(){
+  const cards=S.map((s,i)=>{
+    const open=isOpen(i),p=P.done[s.id];
+    const st=!open?'🔒 Bloqueada':p==null?'Não iniciada':(p>=70?'✅ Aprovada · '+p+'%':'⚠️ Refazer · '+p+'%');
+    return `<button class="card stg" data-act="stage" data-v="${i}" ${open?'':'disabled'}><span class="muted">Etapa ${s.id}</span><h2>${s.name}</h2><span class="muted">${st}</span></button>`;
+  }).join('');
+  M.innerHTML=`<section class="grid">${cards}</section>
+  <section class="card"><h2>📅 Cronograma de 7 dias</h2>
+<ol style="padding-left:20px;margin:0">
+<li><b>Dia 1:</b> Etapa 1, aula, flashcards e exercícios (cerca de 30 min)</li>
+<li><b>Dia 2:</b> Etapa 1, teste e revisão dos erros</li>
+<li><b>Dia 3:</b> Etapa 2, aula, flashcards e exercícios</li>
+<li><b>Dia 4:</b> Etapa 2, teste e revisão dos erros</li>
+<li><b>Dia 5:</b> Etapa 3, aula, exercícios e teste</li>
+<li><b>Dia 6:</b> Etapa 4, aula, exercícios e teste</li>
+<li><b>Dia 7:</b> Etapa 5 (revisão geral) e revisão de todas as dificuldades pendentes</li>
+</ol></section>
+<section class="card"><h2>Seu caminho</h2>
+  <p class="muted">Aprenda, visualize, pratique, teste (70% libera a próxima etapa) e revise o que errou.</p>
+  <div class="row"><button class="btn" data-act="review">🔁 Revisão (${Object.keys(P.wrong).length})</button><button class="btn ghost" data-act="progress">📊 Progresso</button></div></section>`;
+}
+
+function stage(){
+  const s=S[cur];
+  const TABS=[['aula','1 · Aula'],['cards','Flashcards'],['ex','Exercícios'],['test','Teste']];
+  M.innerHTML=`<button class="link" data-act="home">← Etapas</button>
+  <h2>Etapa ${s.id}: ${s.name}</h2>
+  <div class="tabs">${TABS.map(([k,l])=>`<button class="tab ${tab===k?'on':''}" data-act="tab" data-v="${k}">${l}</button>`).join('')}</div>
+  <div id="body"></div>`;
+  const B=$('#body');
+  if(tab==='aula') B.innerHTML=`<section class="card">${s.lesson}</section>`;
+  if(tab==='cards') cards(B,s);
+  if(tab==='ex') B.innerHTML=`<section class="card"><p>Exercícios com retorno imediato. Erros vão para a Revisão.</p><button class="btn" data-act="startEx">Começar</button></section>`;
+  if(tab==='test') B.innerHTML=`<section class="card"><p>${s.tt.length} questões. Nota mínima de 70% para liberar a próxima etapa. A correção aparece no final.</p><button class="btn" data-act="startTest">Iniciar teste</button></section>`;
+}
+
+function cards(B,s){
+  const c=s.cards[fc];
+  B.innerHTML=`<section class="card flash" data-act="flip"><div><div class="muted">${fcFlip?'Resposta':'Pergunta'} · ${fc+1}/${s.cards.length}</div>
+  <div style="margin-top:10px">${fcFlip?c[1]:c[0]}</div><div class="muted" style="margin-top:12px">toque para virar</div></div></section>
+  <div class="row between"><button class="btn ghost" data-act="fprev">← Anterior</button><button class="btn" data-act="fnext">Próximo →</button></div>`;
+}
+
+function quiz(items,mode,target){
+  run={items,mode,target,i:0,score:0,res:[],fb:false,ok:false,sel:null,val:'',built:[],bank:[]};
+  setup();
+}
+
+function setup(){
+  const r=run;
+  if(r.i>=r.items.length) return finish();
+  const q=r.items[r.i];
+  r.fb=false;r.sel=null;r.val='';r.built=[];r.bank=q.t==='ord'?shuf(q.w):[];
+  draw();
+}
+
+function draw(){
+  const r=run,q=r.items[r.i],dis=r.fb?'disabled':'';
+  let b='';
+  if(q.t==='mc') b=`<div class="opts">${q.o.map((o,k)=>`<button class="opt ${r.sel===k?'sel':''}" data-act="mc" data-k="${k}" ${dis}>${o}</button>`).join('')}</div>`;
+  if(q.t==='err') b=`<p class="muted">Toque na palavra incorreta:</p><div class="opts">${q.w.map((x,k)=>`<button class="opt ${r.sel===k?'sel':''}" data-act="mc" data-k="${k}" ${dis}>${x}</button>`).join('')}</div>`;
+  if(q.t==='fill') b=`<div class="row"><input id="fi" value="${r.val}" ${dis} autocomplete="off" placeholder="Escreva aqui"><button class="btn" data-act="fill" ${dis}>Verificar</button></div>`;
+  if(q.t==='ord') b=`<div class="built">${r.built.map(k=>`<button class="chip" data-act="unpick" data-k="${k}" ${dis}>${q.w[k]}</button>`).join('')||'<span class="muted">Toque nas palavras para montar a frase</span>'}</div>
+    <div class="opts">${r.bank.map(k=>`<button class="chip" data-act="pick" data-k="${k}" ${dis}>${q.w[k]}</button>`).join('')}</div>
+    <div style="margin-top:14px"><button class="btn" data-act="ord" ${dis||(r.bank.length?'disabled':'')}>Verificar</button></div>`;
+  let fb='';
+  if(r.fb) fb=`<div class="fb ${r.ok?'ok':'bad'}"><b>${r.ok?'✔ Correto!':'✘ Não foi dessa vez.'}</b>${r.ok?'':`<br>Resposta: <b>${fixOf(q)}</b>`}<br>${q.e}</div><button class="btn" data-act="nx">Próxima →</button>`;
+  const enunciado=q.t==='err'?'Qual palavra está errada?':q.q;
+  r.target.innerHTML=`<section class="card"><div class="muted">${r.i+1} / ${r.items.length} · ${r.mode==='test'?'Teste':r.mode==='rev'?'Revisão':'Exercício'}</div>
+  <div class="bar" style="margin:8px 0 14px"><i style="width:${r.i/r.items.length*100}%"></i></div>
+  <h2>${enunciado}</h2>${b}${fb}</section>`;
+  if(q.t==='fill'&&!r.fb){const f=$('#fi');if(f)f.focus()}
+}
+
+function answer(){
+  const r=run,q=r.items[r.i];
+  if(q.t==='fill'&&!r.val.trim())return;
+  if(q.t==='ord'&&!r.built.length)return;
+  let given,ok;
+  if(q.t==='mc'||q.t==='err'){ok=r.sel===q.a;given=q.t==='mc'?q.o[r.sel]:q.w[r.sel]}
+  else if(q.t==='fill'){ok=norm(r.val)===norm(q.a);given=r.val}
+  else{given=r.built.map(k=>q.w[k]).join(' ');ok=norm(given)===norm(q.a)}
+  r.ok=ok;if(ok)r.score++;
+  r.res.push({q,ok,given});
+  if(ok)delete P.wrong[q.id];else P.wrong[q.id]=1;
+  P.total++;if(ok)P.hits++;save();
+  if(r.mode==='test'){r.i++;setup()}else{r.fb=true;draw()}
+}
+
+function finish(){
+  const r=run,n=r.items.length,pct=Math.round(r.score/n*100);
+  if(r.mode==='test'){P.done[S[cur].id]=Math.max(P.done[S[cur].id]||0,pct);save()}
+  let h=`<section class="card" style="text-align:center"><div class="big">${pct}%</div><p>${r.score} de ${n} corretas</p>`;
+  if(r.mode==='test') h+=`<p>${pct>=70?'🎉 Etapa aprovada! A próxima etapa foi liberada.':'Quase lá. Revise a correção abaixo e tente novamente.'}</p>`;
+  if(r.mode==='ex') h+=`<p class="muted">Pratique mais ou siga para o teste.</p>`;
+  h+=`</section>`;
+  const errs=r.res.filter(x=>!x.ok);
+  if(errs.length) h+=`<section class="card"><h2>Correção</h2>${errs.map(x=>`<p><span class="muted">Você respondeu:</span> ${x.given||'—'}<br><b>Correto:</b> ${fixOf(x.q)}<br><span class="muted">${x.q.e}</span></p>`).join('')}</section>`;
+  h+=`<div class="row">${r.mode==='test'?'<button class="btn" data-act="startTest">Refazer teste</button>':''}${r.mode==='ex'?'<button class="btn" data-act="tab" data-v="test">Ir para o teste →</button>':''}${r.mode==='ex'?'<button class="btn ghost" data-act="startEx">Refazer exercícios</button>':''}<button class="btn ghost" data-act="home">Voltar às etapas</button></div>`;
+  r.target.innerHTML=h;
+  run=null;
+}
+
+function review(){
+  M.innerHTML=`<button class="link" data-act="home">← Etapas</button><h2>Revisão</h2><div id="body"></div>`;
+  const list=ALL.filter(q=>P.wrong[q.id]);
+  if(!list.length){$('#body').innerHTML=`<section class="card"><p>Nenhuma dificuldade pendente. Ótimo trabalho! 🎉</p></section>`;return}
+  quiz(list,'rev',$('#body'));
+}
+
+function progress(){
+  const acc=P.total?Math.round(P.hits/P.total*100):0;
+  M.innerHTML=`<button class="link" data-act="home">← Etapas</button><h2>Seu progresso</h2>
+  <section class="card"><p>Acerto geral: <b>${acc}%</b> (${P.hits} de ${P.total} respostas)</p>
+  <p>Dificuldades pendentes: <b>${Object.keys(P.wrong).length}</b></p></section>
+  <section class="card">${S.map(s=>{const p=P.done[s.id]||0;return `<p><b>Etapa ${s.id} · ${s.name}</b><div class="bar"><i style="width:${p}%"></i></div><span class="muted">${p?'Melhor teste: '+p+'%':'Não concluída'}</span></p>`}).join('')}</section>
+  <button class="btn ghost" data-act="reset">Apagar progresso</button>`;
+}
+
+function rerenderCards(){cards($('#body'),S[cur])}
+
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-act]');
+  if(!t||t.disabled)return;
+  const a=t.dataset.act,v=t.dataset.v,k=+t.dataset.k;
+  if(a==='home')go('home');
+  else if(a==='stage'){cur=+v;tab='aula';fc=0;fcFlip=false;go('stage')}
+  else if(a==='tab'){tab=v;go('stage')}
+  else if(a==='startEx')quiz(S[cur].ex,'ex',$('#body'));
+  else if(a==='startTest')quiz(S[cur].tt,'test',$('#body'));
+  else if(a==='mc'){run.sel=k;answer()}
+  else if(a==='pick'){run.built.push(k);run.bank=run.bank.filter(x=>x!==k);draw()}
+  else if(a==='unpick'){run.bank.push(k);run.built=run.built.filter(x=>x!==k);draw()}
+  else if(a==='ord'||a==='fill')answer();
+  else if(a==='nx'){run.i++;setup()}
+  else if(a==='flip'){fcFlip=!fcFlip;rerenderCards()}
+  else if(a==='fprev'){fc=(fc-1+S[cur].cards.length)%S[cur].cards.length;fcFlip=false;rerenderCards()}
+  else if(a==='fnext'){fc=(fc+1)%S[cur].cards.length;fcFlip=false;rerenderCards()}
+  else if(a==='review')go('review');
+  else if(a==='progress')go('progress');
+  else if(a==='reset'&&confirm('Apagar todo o progresso?')){P.done={};P.wrong={};P.hits=0;P.total=0;save();go('progress')}
+});
+document.addEventListener('input',e=>{if(e.target.id==='fi'&&run)run.val=e.target.value});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&run&&!run.fb&&run.items[run.i].t==='fill'&&document.activeElement.id==='fi')answer();
+});
+
+render();
+</script>
+</body>
+</html>
